@@ -16,6 +16,7 @@ public class TodoServiceImpl implements TodoService{
     @Autowired
     private TodoRepository todoRepository;
 
+    // return TodoAlreadyExists() if todo already exists
     @Override
     public void createTodo(TodoDTO todo) throws ConstraintViolationException, ToDoCollectionException{
         Optional<TodoDTO> todoOptional = todoRepository.findByTodo(todo.getTodo());
